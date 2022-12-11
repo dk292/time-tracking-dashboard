@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  --Blue: hsl(246, 80%, 60%);
+
+  --Light-red-work: hsl(15, 100%, 70%);
+  --Soft-blue-play: hsl(195, 74%, 62%);
+  --Light-red-study: hsl(348, 100%, 68%);
+  --Lime-green-exercise: hsl(145, 58%, 55%);
+  --Violet-social: hsl(264, 64%, 52%);
+  --Soft-orange-self-care: hsl(43, 84%, 65%);
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--Very-dark-blue);
+  padding: 3rem 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+
+.main-card {
+  background-color: var(--Dark-blue);
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.profile-container {
+  background-color: var(--Blue);
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 15px;
+  width: 100%;
+  box-sizing: content-box;
+}
+
+.profile {
+  width: 67.5px;
+}
+
+.profile img {
+  border: 3px solid white;
+  border-radius: 100%;
+}
+
+.profile-container p {
+  font-size: 0.8rem;
+  color: var(--Pale-Blue);
+  font-weight: 300;
+}
+
+.profile-container p .name {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: 300;
+  color: var(--Pale-Blue);
+  text-shadow: 4px 4px 5px var(--Desaturated-blue);
+}
+
+.time-title {
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-card .time-title a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--Desaturated-blue);
+  font-weight: 400;
+}
+
+.cards {
+  width: 100%;
+  min-height: 150px;
+  background-color: var(--Light-red-work);
+  text-align: right;
+  border-radius: 15px;
+  position: relative;
+}
+
+.cards .time-container {
+  background-color: var(--Dark-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  border-radius: 15px;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.time-container .side {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.side .title {
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+.side img {
+  display: block;
+}
+
+.time-container .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.time .current {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.time .previous {
+  font-size: 0.7rem;
+  color: var(--Desaturated-blue);
+}
+
+#play {
+  background-color: var(--Soft-blue-play);
+}
+
+#study {
+  background-color: var(--Light-red-study);
+}
+
+#exercise {
+  background-color: var(--Lime-green-exercise);
+}
+
+#social {
+  background-color: var(--Violet-social);
+}
+
+#self-care {
+  background-color: var(--Soft-orange-self-care);
+}
+
+/* Hover */
+.main-card a:hover,
+a:focus,
+.side img {
+  color: var(--Pale-Blue);
+  cursor: pointer;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 700px) {
+  .grid-container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 13px;
+  }
+
+  .grid-container {
+    max-width: 85%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main-card {
+    grid-row: 1 / span 2;
+    height: 100%;
+  }
+
+  .main-card .profile-container {
+    flex-direction: column;
+    align-items: start;
+    min-height: 60%;
+    box-sizing: border-box;
+  }
+
+  .profile-container p .name {
+    line-height: 1.1;
+    font-size: 2rem;
+  }
+  .main-card a {
+    margin-bottom: 0.5rem;
+  }
+
+  .main-card .time-title {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .time-container .time {
+    flex-direction: column;
+    align-items: start;
+  }
+}
